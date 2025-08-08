@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your device info | Home</title>
+    <style>
+       * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       }
+       body {
+        font-family: 'segoe UI', sans-serif;
+        background: radial-gradient(#0d0d0d, #000000);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        text-align: center;
+       }
+       .container{
+        background: rgba(0, 255, 255, 0.08);
+        border: 1px solid rgba(0, 255, 255, 0.2);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 40px;
+        width: 90%;
+        max-width: 500px;
+        box-shadow: 0 0 30px #00ffff33;
+        text-align: center;
+        animation: pulse 3s infinite;
+       }
+       h1{
+        font-size: 3rem;
+        margin-bottom: 20px;
+        background: linear-gradient(90deg,#00fff0, #00aaff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+       }
+       p{
+        font-size: 1.2rem;
+        color: #ccc;
+       }
+       @keyframes pulse{
+        0% {text-shadow: 0 0 10px #00fff0;}
+        50% {text-shadow: 0 0 30px #00fff0;}
+        100% {text-shadow: 0 0 10px #00fff0;}
+       }
+       .button:hover{
+        background: #0088cc;
+        box-shadow: 0 0 30px #0088cc;
+       }
+       .nav{
+        position: absolute;
+        top: 20px;
+        right: 30px;
+       }
+       .nav a:hover{
+        color: #00fff0;
+       }
+       footer{
+        position: absolute;
+        bottom: 15px;
+        font-size: 0.9rem;
+        color: #666;
+       }
+       button{
+        border-radius: 6px;
+       }
+       .navbar{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(0, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 40px;
+        z-index: 100;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+       }
+       .logo{
+        font-size: 1.8rem;
+        font-weight: bold;
+        background: linear-gradient(90deg, #00fff0, #00aaff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+       }
+       .nav-links{
+        list-style: none;
+        display: flex;
+        gap: 30px;
+       }
+       .nav-links a{
+        color: #00ffff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+       }
+       .nav-links a:hover{
+        color: #ffffff;
+       }
+       
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><p>&copy;Binary technologies</div>
+        <ul class="nav-links">
+    <div class="container"></div>
+    <div class="nav">
+       <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Terms</a></li>
+    </div>
+</ul>
+</nav>
+    <script>
+        const output = document.getElementById("device");
+        const device = navigator.userAgent;
+        output.textContent = device
+    </script>
+
+    <h1>Your Device Info</h1>
+    <p>Identify Your Device With a click😁</p>
+    <div class="button"><button><a class="button" href="website.html">Launch Detector</a></button></div>
+    <footer>
+        <p>&copy; 2025 YourDevice Inc. Binary technologies(All rights reserved)</p>
+    </footer>
+</body>
+</html>
