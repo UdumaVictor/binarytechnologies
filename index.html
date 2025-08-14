@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Detector</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        body{
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #111;
+            color: #fff;
+        }
+
+        .box{
+            padding: 20px;
+            background: #222;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #00ffcc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Device Info</h1>
+     <nav class="navbar">
+        <div class="logo"><p>&copy;Binary technologies</div>
+        <ul class="nav-links">
+    <div class="container"></div>
+    <div class="nav">
+       <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Terms</a></li>
+    </div>
+</ul>
+</nav>
+    <div class="box">
+        <h2>Your Device Info</h2>
+        <p id="device">Detecting...</p>
+    </div>
+    <script>
+        const output = document.getElementById("device");
+        const userAgent = navigator.userAgent;
+        function getDeviceName(ua) {
+            if(/Android/i.test(ua)) {
+                if(ua.includes("itel")) return "Itel Device";
+                if(ua.includes("Infinix")) return "Infinix Device";
+                if(ua.includes("Tecno")) return "Tecno Device";
+                if(ua.includes("Samsung")) return "Samsung Device";
+                if(ua.includes("Redmi")) return "Redmi/Xiaomi Device";
+                return "Android Device";
+            }
+            if(/iphone/i.test(ua)) return "iphone";
+            if(/ipad/i.test(ua)) return "ipad";
+            if(/Windows NT/i.test(ua)) return "Windows PC";
+            if(/Macintosh/i.test(ua)) return "Mac";
+            return "Unknown Device";
+        }
+
+        const deviceName = getDeviceName(userAgent);
+        output.innerText = "You are using: " + deviceName;
+    </script>
+    <footer>
+        <p>&copy; 2025 YourDevice Inc. Binary technologies(All rights reserved)</p>
+    </footer>
+</body>
+</html>
